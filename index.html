@@ -1,11 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fruit Burst</title>
+
+    <!-- Tailwind and daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font family Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- ionIcon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        "customRed" : "#F85559"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .font-lato {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .exotic{
+            background-image: url("/images/banner1.png");
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="font-lato">
+    <header class="container mx-auto bg-red-500 mt-10 mb-14 w-[1440px] py-8 px-14 rounded-full">
+        <div class="flex items-center justify-between">
+            <div class="flex gap-7 text-lg text-white font-medium">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Shop</a>
+                <a href="#">All Fruits</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <img src="./images/logo.png" alt="logo">
+                <h2 class="text-4xl font-bold text-white">Fruit Burst</h2>
+            </div>
+            <div class="relative">
+                <input class=" w-[400px] p-4 rounded-full" type="text" placeholder="Search here">
+                <ion-icon class="w-6 h-6 absolute right-4 top-4" name="search-outline"></ion-icon>
+            </div>
+        </div>
+    </header>
+
+    <!-- main section -->
+    <main class="container mx-auto w-[1440px]">
+        <!-- Banner section -->
+        <!-- <section class="w-full h-full exotic bg-no-repeat bg-cover flex flex-col">
+            <h1 class="text-center text-7xl font-extrabold text-white mb-6 pt-20">Exotic tastes at your <br> doorstep</h1>
+            <p class="text-center text-xl font-medium text-white mb-8">We supply highly quality organic products</p>
+            <button class="text-white text-xl font-extrabold bg-red-500 py-5 px-8 rounded-lg">Shop Now</button>
+        </section> -->
+        <section class="mb-40 relative">
+            <div class="carousel w-full ">
+                <div id="slide1" class="carousel-item relative w-full">
+                  <img src="/images/banner1.png" class="w-full" />
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" class="btn btn-circle">❮</a> 
+                    <a href="#slide2" class="btn btn-circle">❯</a>
+                  </div>
+                </div> 
+                <div id="slide2" class="carousel-item relative w-full">
+                  <img src="/images/banner2.png" class="w-full" />
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" class="btn btn-circle">❮</a> 
+                    <a href="#slide3" class="btn btn-circle">❯</a>
+                  </div>
+                </div> 
+                <div id="slide3" class="carousel-item relative w-full">
+                  <img src="/images/banner3.png" class="w-full" />
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" class="btn btn-circle">❮</a> 
+                    <a href="#slide4" class="btn btn-circle">❯</a>
+                  </div>
+                </div>
+                <div id="slide4" class="carousel-item relative w-full">
+                  <img src="/images/banner4.png" class="w-full" />
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" class="btn btn-circle">❮</a> 
+                    <a href="#slide1" class="btn btn-circle">❯</a>
+                  </div>
+                </div>
+                <!-- <div class="absolute top-[25%] left-[25%] flex flex-col items-center bg-green-500">
+                    <h1 class="text-center text-7xl font-extrabold text-white mb-6 pt-20">Exotic tastes at your <br> doorstep</h1>
+                    <p class="text-center text-xl font-medium text-white mb-8">We supply highly quality organic products</p>
+                    <button class="text-white text-xl font-extrabold bg-red-500 py-5 px-8 rounded-lg w-fit">Shop Now</button>
+                </div> -->
+            </div>
+            <div class="absolute top-0 left-[25%] flex flex-col items-center">
+                <h1 class="text-center text-7xl font-extrabold text-white mb-6 pt-20">Exotic tastes at your <br> doorstep</h1>
+                <p class="text-center text-xl font-medium text-white mb-8">We supply highly quality organic products</p>
+                <button class="text-white text-xl font-extrabold bg-red-500 py-5 px-8 rounded-lg w-fit">Shop Now</button>
+            </div>
+            <div class="absolute left-[9%] -bottom-16 flex gap-24 py-12 px-16 bg-white rounded-lg shadow-md">
+                <div class="text-center">
+                    <img src="./images/fruit1.png" alt="fr1">
+                    <p>Grape</p>
+                </div>
+                <div class="text-center">
+                    <img src="./images/fruit2.png" alt="fr2">
+                    <p>Grape</p>
+                </div>
+                <div class="text-center">
+                    <img src="./images/fruit3.png" alt="fr3">
+                    <p>Grape</p>
+                </div>
+                <div class="text-center">
+                    <img src="./images/fruit4.png" alt="fr4">
+                    <p>Grape</p>
+                </div>
+                <div class="text-center">
+                    <img src="./images/fruit5.png" alt="fr5">
+                    <p>Grape</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer section -->
 </body>
+
 </html>
